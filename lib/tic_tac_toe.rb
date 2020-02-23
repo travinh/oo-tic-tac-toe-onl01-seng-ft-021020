@@ -1,3 +1,5 @@
+
+
 class TicTacToe
   
   attr_accessor :board
@@ -7,8 +9,8 @@ class TicTacToe
     [0,4,8],[2,4,6]
     ]
   
-  def initialize (board = Array.new(9," "))
-    @board = board
+  def initialize
+    @board = Array.new(9," ")
   end
   
   def display_board
@@ -49,7 +51,7 @@ class TicTacToe
     index  = input_to_index(input)
     token = current_player
     if valid_move?(index)
-      move(index,current_player)
+      move(index,token)
       display_board
     else
       turn
@@ -112,14 +114,14 @@ class TicTacToe
   
   def play 
     until over?
-    turn
-  end
+      turn
+    end
   
-  if won?
-    puts "Congratulations #{winner}!"
-  elsif draw?
-    puts "Cat's Game!"
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
+    end
   end
-end
   
 end
